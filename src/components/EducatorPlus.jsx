@@ -1,10 +1,5 @@
 const EducatorPlus = () => {
     return <>
-        {/* <div className="bg-[url('bg-texture.png')] bg-[#2C3162] py-10">
-        <h2 className="text-3xl text-center font-bold text-white">Invest in your career with Educator Plus</h2>
-        <p className="text-center text-gray-300">Get access to videos in over 90% of courses, Specializations, and Professional Certificates taught by top instructors from leading universities and companies.</p>
-    </div> */}
-
         <section className="bg-gray-900 text-white">
             <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-20">
                 <div className="mx-auto max-w-2xl text-center">
