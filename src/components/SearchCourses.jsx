@@ -34,9 +34,9 @@ const SearchCourses = () => {
     ];
 
     return <>
-        <section className="bg-gray-900 text-white py-12">
+        <section className="bg-gray-900 text-white py-16">
             <div className="mx-auto text-center max-w-5xl">
-                <h2 className="text-3xl font-bold sm:text-4xl">Search the 7,000+ courses in Educator Plus</h2>
+                <h2 className="text-3xl font-bold">Search the 7,000+ courses in Educator Plus</h2>
 
                 <div className="relative border border-indigo-900 mt-6 mb-4">
                     <label htmlFor="Search" className="sr-only"> Search </label>
