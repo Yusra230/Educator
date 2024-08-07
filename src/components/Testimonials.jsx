@@ -37,6 +37,8 @@ const Testimonials = () => {
                 <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
                   {testimonialObj.map(item=> <TestimonialCard key={item.id} item={item}></TestimonialCard>)}
                 </div>
+
+                <p className="mt-14 text-center">Source: Educator Learner Outcomes Survey 2023</p>
             </div>
         </section>
     </>
