@@ -4,6 +4,7 @@ const PriceCard = ({ item }) => {
     console.log(item.features);
     return <>
         <div className="rounded-2xl border border-gray-600 shadow-sm w-96 py-6">
+            {item.id == 2 && <h2 className="bg-indigo-600">Most Popular</h2>}
             <div className="p-6 sm:px-8">
                 <h2 className="text-lg font-medium">
                     {item.planName}
@@ -19,7 +20,7 @@ const PriceCard = ({ item }) => {
                 </p>
 
                 <a
-                    className="mt-4 block rounded border border-indigo-600 bg-indigo-600 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 sm:mt-6"
+                    className={`mt-4 block rounded border border-indigo-600 ${item.id == 2 ? 'bg-indigo-600': 'text-indigo-600'} text-white py-3 text-center text-sm font-medium hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 sm:mt-6`}
                     href="#"
                 >
                     {item.buttonText}
