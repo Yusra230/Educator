@@ -2,6 +2,7 @@ import './App.css'
 import EducatorPlus from './components/EducatorPlus'
 import EducatorPlusCardSection from './components/EducatorPlusCardSection'
 import FAQSection from './components/FAQSection'
+import Footer from './components/Footer'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Pricing from './components/Pricing'
@@ -21,6 +22,7 @@ function App() {
    <Testimonials></Testimonials>
    <Pricing></Pricing>
    <FAQSection></FAQSection>
+   <Footer></Footer>
    </div>
   </>
 }
