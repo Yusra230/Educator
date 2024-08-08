@@ -15,7 +15,7 @@ const PriceCard = ({ item }) => {
                 <p className="mt-2 sm:mt-4">
                     <strong className="text-3xl font-bold sm:text-4xl">{item.price}</strong>
 
-                    <span className="text-sm font-medium">/month</span>
+                    <span className="text-sm font-medium"> /month</span>
                 </p>
 
                 <a
@@ -26,7 +26,7 @@ const PriceCard = ({ item }) => {
                 </a>
             </div>
 
-            <div className="p-6 sm:px-8">
+            <div className="p-4">
                 <ul className="mt-2 space-y-2 sm:mt-4">
                     <FeatureList key={item.id} features={item.features}></FeatureList>
                 </ul>
