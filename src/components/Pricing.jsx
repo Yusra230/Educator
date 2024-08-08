@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PriceCard from "./PriceCard";
+import PricingForTeam from "./PricingForTeam";
 
 const Pricing = () => {
 
@@ -49,6 +50,23 @@ const Pricing = () => {
         },
     ];
 
+
+    let teamPricing = [
+        {
+            id: 1,
+            planName: 'Educator For Teams',
+            description: 'For 5-125 Users',
+            price: '$399',
+            buttonText: 'Get Started',
+            features: [
+                'Upskill 5 to 125 employees',
+                'Unlimited access to 8,500 learning opportunities',
+                'Program setup and launch tools',
+                'Analytics and benchmarking dashboard'
+            ],
+        },
+    ];
+
     return <>
         <section className="bg-gray-900 text-white py-10">
             <h2 className="text-3xl font-bold text-center">Choose the plan that's right for you or your team's goals</h2>
@@ -68,7 +86,19 @@ const Pricing = () => {
 
             <div className="max-w-screen-lg px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 mx-auto">
                 <div className="flex items-start justify-center text-center gap-4">
-                    {pricePlanObj.map(item => <PriceCard key={item.id} item={item}></PriceCard>)}
+                    {active == 'individual' && pricePlanObj.map(item => <PriceCard key={item.id} item={item}></PriceCard>)}
+
+                </div>
+
+                <div className="flex text-center items-center flex-col">
+                    {active === 'team' && (
+                        <>
+                            <PricingForTeam />
+                            {teamPricing.map(item => (
+                                <PriceCard key={item.id} item={item} />
+                            ))}
+                        </>
+                    )}
                 </div>
             </div>
 
