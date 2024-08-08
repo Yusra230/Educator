@@ -15,34 +15,37 @@ const Pricing = () => {
             planName: 'Single learning program',
             description: 'Learn a single topic or skill and earn a credential',
             price: '49$ - 79$',
-            features: {
-                feature1: 'Access all courses within the learning program',
-                feature2: 'Earn a certificate upon completion after your trial ends',
-            },
+            buttonText: 'Get Started',
+            features: [
+                'Access all courses within the learning program',
+                'Earn a certificate upon completion after your trial ends',
+            ],
         },
 
         {
             id: 2,
-            planName: 'Coursera Plus Monthly',
+            planName: 'Educator Plus Monthly',
             description: 'Complete multiple courses and earn credentials in the short term',
             price: '49$',
-            features: {
-                feature1: 'Access 7,000+ courses and Specializations from 170+ leading companies and universities',
-                feature2: 'Earn unlimited certificates after your trial ends',
-                feature3: 'Learn job-relevant skills and tools with 1,000+ applied projects and hands-on labs from industry experts',
-                feature4: 'Choose from more than 15 Professional Certificate programs from industry leaders like Google, Facebook, and more',
-            },
+            buttonText: 'Start 7-day Free Trial',
+            features: [
+                'Access 7,000+ courses and Specializations from 170+ leading companies and universities',
+                'Earn unlimited certificates after your trial ends',
+                'Learn job-relevant skills and tools with 1,000+ applied projects and hands-on labs from industry experts',
+                'Choose from more than 15 Professional Certificate programs from industry leaders like Google, Facebook, and more',
+            ],
         },
 
         {
             id: 3,
-            planName: 'Coursera Plus Annual',
+            planName: 'Educator Plus Annual',
             description: 'Combine flexibility and savings with long-term learning goals',
             price: '$399',
-            features: {
-                feature1: 'Save when you pay up front for the year',
-                feature2: 'Enjoy maximum flexibility to achieve work/life balance and learn at your own pace',
-            },
+            buttonText: 'Try Educator Plus Annual',
+            features: [
+                'Save when you pay up front for the year',
+                'Enjoy maximum flexibility to achieve work/life balance and learn at your own pace',
+            ],
         },
     ];
 
@@ -64,9 +67,8 @@ const Pricing = () => {
             </div>
 
             <div className="max-w-screen-lg px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 mx-auto">
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:items-stretch md:grid-cols-3 text-center">
-                   {pricePlanObj.map(item=><PriceCard key={item.id} item={item}></PriceCard>)}
-                   
+                <div className="flex items-start justify-center text-center gap-4">
+                    {pricePlanObj.map(item => <PriceCard key={item.id} item={item}></PriceCard>)}
                 </div>
             </div>
 

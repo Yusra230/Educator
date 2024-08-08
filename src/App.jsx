@@ -1,6 +1,7 @@
 import './App.css'
 import EducatorPlus from './components/EducatorPlus'
 import EducatorPlusCardSection from './components/EducatorPlusCardSection'
+import FAQSection from './components/FAQSection'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Pricing from './components/Pricing'
@@ -19,6 +20,7 @@ function App() {
    <SearchCourses></SearchCourses>
    <Testimonials></Testimonials>
    <Pricing></Pricing>
+   <FAQSection></FAQSection>
    </div>
   </>
 }

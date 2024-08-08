@@ -1,6 +1,7 @@
-const FeatureList = ({ features }) => {
+const FeatureList = ({ item }) => {
+    console.log(item);
     return (
-        <li className="flex text-left justify-start items-start">
+        <li className="flex text-left justify-start items-start border-t border-gray-700 p-3">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -11,7 +12,7 @@ const FeatureList = ({ features }) => {
             >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
             </svg>
-            <span>{features.feature1}</span>
+            <span>{item}</span>
         </li>
     );
 }
