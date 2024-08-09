@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Header = () => {
 
     return <>
@@ -12,7 +14,7 @@ const Header = () => {
                         <nav aria-label="Global" className="hidden md:block">
                             <ul className="flex items-center gap-6 text-sm text-white">
                                 <li>
-                                    <a className="transition hover:text-gray-200/75" href="#"> Home </a>
+                                    <Link to={'/'} className="transition hover:text-gray-200/75"> Home </Link>
                                 </li>
 
                                 <li>
@@ -20,7 +22,7 @@ const Header = () => {
                                 </li>
 
                                 <li>
-                                    <a className="transition hover:text-gray-200/75" href="#"> Courses </a>
+                                    <Link to={'/courses'} className="transition hover:text-gray-200/75"> Courses </Link>
                                 </li>
 
                                 <li>

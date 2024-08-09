@@ -107,50 +107,50 @@ let courses = [
 
     },
 
-    // {
-    //     id: 1,
-    //     mainImg: 'course1.jpg',
-    //     logo: 'googleL.png',
-    //     logoName: 'Google',
-    //     title: 'Google AI Essentials',
+    {
+        id: 13,
+        mainImg: 'course13.jpg',
+        logo: 'googleL.png',
+        logoName: 'Google',
+        title: 'AJAX development',
 
-    // },
+    },
 
-    // {
-    //     id: 1,
-    //     mainImg: 'course1.jpg',
-    //     logo: 'googleL.png',
-    //     logoName: 'Google',
-    //     title: 'Google AI Essentials',
+    {
+        id: 14,
+        mainImg: 'course14.jpg',
+        logo: 'logo2.png',
+        logoName: 'University of Michigan',
+        title: 'API Integration',
 
-    // },
+    },
 
-    // {
-    //     id: 1,
-    //     mainImg: 'course1.jpg',
-    //     logo: 'googleL.png',
-    //     logoName: 'Google',
-    //     title: 'Google AI Essentials',
+    {
+        id: 15,
+        mainImg: 'course15.jpg',
+        logo: 'logo4.png',
+        logoName: 'IBM',
+        title: 'Rust',
 
-    // },
+    },
 
-    // {
-    //     id: 1,
-    //     mainImg: 'course1.jpg',
-    //     logo: 'googleL.png',
-    //     logoName: 'Google',
-    //     title: 'Google AI Essentials',
+    {
+        id: 16,
+        mainImg: 'course16.jpg',
+        logo: 'googleL.png',
+        logoName: 'Google',
+        title: 'Java',
 
-    // },
+    },
 
-    // {
-    //     id: 1,
-    //     mainImg: 'course1.jpg',
-    //     logo: 'googleL.png',
-    //     logoName: 'Google',
-    //     title: 'Google AI Essentials',
+    {
+        id: 17,
+        mainImg: 'course17.jpg',
+        logo: 'logo3.png',
+        logoName: 'Vanderbuilt University',
+        title: 'React',
 
-    // },
+    },
 ];
 
 export default courses;
