@@ -5,7 +5,7 @@ const Testimonials = () => {
     let testimonialObj = [
         { 
             id : 1,
-            image:'testi1.png',
+            image:'/testi1.png',
             description:`"I needed the flexibility offered by Educator Plus in order to achieve my goals. I have a full-time job and 3 kids.I learned business statistics and analysis to apply to my job, but my Educator Plus subscription motivated me to keep learning. I have a new career goal to pivot into data analysis and data science. I'm learning Python now!"`,
             name : 'AbiGail P.',
             country :'United States',
@@ -13,7 +13,7 @@ const Testimonials = () => {
 
         { 
             id : 2,
-            image:'testi2.png',
+            image:'/testi2.png',
             description:`"Educator Plus keeps me motivated to learn. With each course, I'm getting more value out of my subscription. I can focus on life sciences—my main specialty—but also pursue other interests like society and religion. I can access almost anything with Educator Plus!"`,
             name : 'Shi Gie F.',
             country :'Singapore',
@@ -21,7 +21,7 @@ const Testimonials = () => {
 
         { 
             id : 3,
-            image:'testi3.png',
+            image:'/testi3.png',
             description:`"I really appreciate the flexibility I get with Coursera Plus. I can try any course and switch to another one for no additional cost. This motivates me to learn even more—at one point I was taking three courses at the same time!"`,
             name : 'Ines K.',
             country :'France',

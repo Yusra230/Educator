@@ -1,5 +1,9 @@
 import { useParams } from "react-router-dom";
 import courses from "../data/courses";
+import { FaRegClock } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa";
+import { BiDollar } from "react-icons/bi";
+import Testimonials from "./Testimonials";
 
 const SingleCourse = () => {
     const params = useParams();
@@ -11,7 +15,7 @@ const SingleCourse = () => {
 
     return <>
         <section className="bg-gray-900 text-white">
-            <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+            <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 items-center">
                     <div className="relative h-50 overflow-hidden rounded-lg sm:h-80 lg:order-last">
                         <img
@@ -21,7 +25,7 @@ const SingleCourse = () => {
                         />
                     </div>
 
-                    <div className="lg:py-24">
+                    <div className="lg:py-10">
                         <div className="flex items-center mb-4">
                             <img src={course.logo} className="w-10 mr-4" alt="" />
                             <p>{course.logoName}</p>
@@ -32,15 +36,28 @@ const SingleCourse = () => {
                             {course.description}
                         </p>
 
+                        <div className="flex py-4 space-x-10">
+                            <span className="flex items-center"><span className="bg-indigo-600 p-2 rounded-md mr-2"><FaRegClock /> </span>{course.duration}H</span>
+
+                            <span className="flex items-center"><span className="bg-indigo-600 p-2 rounded-md mr-2"><FaRegStar /> </span>{course.rating}</span>
+
+                            <span className="flex items-center"><span className="bg-indigo-600 p-2 rounded-md mr-2"><BiDollar /></span>{course.price}</span>
+
+
+                        </div>
+
                         <a
                             href="#"
-                            className="mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none"
+                            className="mt-4 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none"
                         >
-                           Enroll Today
+                            Enroll Today
                         </a>
                     </div>
                 </div>
             </div>
+
+           <Testimonials></Testimonials>
+
         </section>
 
     </>
