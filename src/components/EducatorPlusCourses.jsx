@@ -26,7 +26,6 @@ const EducatorPlusCardSection = () => {
             logo: 'logo3.png',
             logoName: 'Vanderbuilt University',
             title: 'Prompt Engineering',
-
         },
 
         {
