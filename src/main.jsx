@@ -6,12 +6,14 @@ import App from './routes/App.jsx'
 import './index.css'
 import Courses from './components/Courses.jsx';
 import Home from './routes/Home.jsx';
+import SingleCourse from './components/SingleCourse.jsx';
 
 const router = createBrowserRouter([
   {
     path: '/', element: <App />, children: [
       { path: '/', element: <Home /> },
-      { path: '/courses', element: <Courses /> }
+      { path: '/courses', element: <Courses /> },
+      { path: '/product/:id', element: <SingleCourse /> },
     ]
   }
 ])
