@@ -6,9 +6,9 @@ let courses = [
         logoName: 'Google',
         title: 'Google AI Essentials',
         description: 'Launch your career in Google AI Essentials. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price : '20',
+        price: 20,
         duration: '12',
-        rating : '4.5',
+        rating: '4.5',
         category: 'AI'
     },
 
@@ -19,9 +19,9 @@ let courses = [
         logoName: 'University of Michigan',
         title: 'Python For Everybody',
         description: 'Launch your career in Python. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price : '30',
+        price: 30,
         duration: '15',
-        rating : '4.6',
+        rating: '4.6',
         category: 'Programming'
     },
 
@@ -32,9 +32,9 @@ let courses = [
         logoName: 'Vanderbuilt University',
         title: 'Prompt Engineering',
         description: 'Launch your career in Prompt Engineering. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price : '30',
+        price: 30,
         duration: '10',
-        rating : '4.7',
+        rating: '4.7',
         category: 'AI'
     },
 
@@ -45,9 +45,9 @@ let courses = [
         logoName: 'IBM',
         title: 'Data Science',
         description: 'Launch your career in Data Science. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price : '10',
+        price: 10,
         duration: '15',
-        rating : '4.9',
+        rating: '4.9',
         category: 'Data Science'
     },
 
@@ -58,9 +58,9 @@ let courses = [
         logoName: 'Google',
         title: 'Data Science',
         description: 'Launch your career in Data Science. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price : '40',
+        price: 40,
         duration: '5',
-        rating : '5',
+        rating: '5',
         category: 'Data Science'
     },
 
@@ -71,9 +71,9 @@ let courses = [
         logoName: 'IBM',
         title: 'Artificial Intelligance',
         description: 'Launch your career in Artificial Intelligance. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price : '25',
+        price: 25,
         duration: '9',
-        rating : '4.8',
+        rating: '4.8',
         category: 'AI'
     },
 
@@ -84,9 +84,9 @@ let courses = [
         logoName: 'University of Michigan',
         title: 'Web Development',
         description: 'Launch your career in Web Development. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price : '20',
+        price: 20,
         duration: '12',
-        rating : '4.5',
+        rating: '4.5',
         category: 'Web Development'
     },
 
@@ -97,9 +97,9 @@ let courses = [
         logoName: 'Vanderbuilt University',
         title: 'App Development',
         description: 'Launch your career in App Development. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price : '20',
+        price: 20,
         duration: '12',
-        rating : '4.5',
+        rating: '4.5',
         category: 'App Development'
     },
 
@@ -110,9 +110,9 @@ let courses = [
         logoName: 'Google',
         title: 'Frontend Development',
         description: 'Launch your career in Frontend Development. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price : '20',
+        price: 20,
         duration: '12',
-        rating : '4.5',
+        rating: '4.5',
         category: 'Web Development'
     },
 
@@ -123,9 +123,9 @@ let courses = [
         logoName: 'University of Michigan',
         title: 'Machine Learning',
         description: 'Launch your career in Machine Learning. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price : '20',
+        price: 20,
         duration: '12',
-        rating : '4.5',
+        rating: '4.5',
         category: 'AI'
     },
 
@@ -136,9 +136,9 @@ let courses = [
         logoName: 'Google',
         title: 'Deep Learning',
         description: 'Launch your career in Deep Learning. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price : '20',
+        price: 20,
         duration: '12',
-        rating : '4.5',
+        rating: '4.5',
         category: 'AI'
     },
 
@@ -149,9 +149,9 @@ let courses = [
         logoName: 'IBM',
         title: 'Cloud Computing',
         description: 'Launch your career in Cloud Computing. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price : '20',
+        price: 20,
         duration: '12',
-        rating : '4.5',
+        rating: '4.5',
         category: 'Cloud Computing'
     },
 
@@ -162,9 +162,9 @@ let courses = [
         logoName: 'Google',
         title: 'AJAX development',
         description: 'Launch your career in AJAX development. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price : '20',
+        price: 20,
         duration: '12',
-        rating : '4.5',
+        rating: '4.5',
         category: 'Web Development'
     },
 
@@ -175,9 +175,9 @@ let courses = [
         logoName: 'University of Michigan',
         title: 'API Integration',
         description: 'Launch your career in API Integration. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price : '20',
+        price: 20,
         duration: '12',
-        rating : '4.5',
+        rating: '4.5',
         category: 'Web Development'
     },
 
@@ -188,9 +188,9 @@ let courses = [
         logoName: 'IBM',
         title: 'Rust',
         description: 'Launch your career in Rust. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price : '20',
+        price: 20,
         duration: '12',
-        rating : '4.5',
+        rating: '4.5',
         category: 'Programming'
     },
 
@@ -201,9 +201,9 @@ let courses = [
         logoName: 'Google',
         title: 'Java',
         description: 'Launch your career in Java. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price : '20',
+        price: 20,
         duration: '12',
-        rating : '4.5',
+        rating: '4.5',
         category: 'Programming'
     },
 
@@ -214,9 +214,9 @@ let courses = [
         logoName: 'Vanderbuilt University',
         title: 'React',
         description: 'Launch your career in React. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price : '30',
+        price: 30,
         duration: '10',
-        rating : '4.5',
+        rating: '4.5',
         category: 'Web Development'
     },
 ];

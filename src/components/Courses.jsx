@@ -19,8 +19,14 @@ const Courses = () => {
 
 
     const handleToInput = () => {
-        console.log(priceFrom.current.value);
-        console.log(priceTo.current.value);
+        let priceF = parseInt(priceFrom.current.value);
+        let priceT = parseInt(priceTo.current.value);
+        console.log(priceF);
+        console.log(priceT);
+        console.log(courses);
+        let filteredItem = courses.filter(item => item.price >= priceF && item.price <= priceT);
+        console.log(filteredItem);
+        setFilteredItems(filteredItem);
     }
 
     function arraysEqual(arr1, arr2) {
