@@ -13,6 +13,12 @@ const Courses = () => {
 
     let [filteredItems, setFilteredItems] = useState(courses);
 
+    function arraysEqual(arr1, arr2) {
+        if (arr1.length !== arr2.length) return false;
+        return arr1.every((value, index) => value === arr2[index]);
+    }
+
+
     const handleCategory = (category) => {
         if (category == 'All') {
             setFilteredItems(courses);
@@ -21,9 +27,17 @@ const Courses = () => {
         else {
             let filteredItem = courses.filter(item => item.category == category);
             console.log(filteredItem);
-            let mergedItems = [...filteredItem, ...filteredItems];
-            // console.log(mergedItems);
-            setFilteredItems(filteredItem);
+            if (arraysEqual(filteredItems, courses)) {
+                console.log('equal');
+                console.log(filteredItem);
+                setFilteredItems(filteredItem);
+            }
+
+            else {
+                let mergedItems = [...filteredItem, ...filteredItems];
+                console.log(mergedItems);
+                setFilteredItems(mergedItems);
+            }
         }
     }
 
