@@ -19,25 +19,33 @@ const Courses = () => {
     }
 
 
-    const handleCategory = (category) => {
-        if (category == 'All') {
-            setFilteredItems(courses);
-        }
-        // console.log(category);
-        else {
-            let filteredItem = courses.filter(item => item.category == category);
-            console.log(filteredItem);
-            if (arraysEqual(filteredItems, courses)) {
-                console.log('equal');
-                console.log(filteredItem);
-                setFilteredItems(filteredItem);
+    const handleCategory = (category, checkboxStatus) => {
+        console.log(checkboxStatus);
+        if (checkboxStatus == true) {
+            if (category == 'All') {
+                setFilteredItems(courses);
             }
-
+            // console.log(category);
             else {
-                let mergedItems = [...filteredItem, ...filteredItems];
-                console.log(mergedItems);
-                setFilteredItems(mergedItems);
+                let filteredItem = courses.filter(item => item.category == category);
+                console.log(filteredItem);
+                if (arraysEqual(filteredItems, courses)) {
+                    console.log('equal');
+                    console.log(filteredItem);
+                    setFilteredItems(filteredItem);
+                }
+
+                else {
+                    let mergedItems = [...filteredItem, ...filteredItems];
+                    console.log(mergedItems);
+                    setFilteredItems(mergedItems);
+                }
             }
+        }
+
+        else {
+            let removeItems = filteredItems.filter(item => item.category != category);
+            setFilteredItems(removeItems);
         }
     }
 
