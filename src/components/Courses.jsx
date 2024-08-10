@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import courses from "../data/courses"
 import CategoryList from "./CategoryList";
 import EducatorPlusCard from "./EducatorPlusCard"
@@ -14,15 +14,19 @@ const Courses = () => {
     let [filteredItems, setFilteredItems] = useState(courses);
     let [selectedItems, setSelectedItems] = useState([]);
 
+    const priceFrom = useRef('');
+    const priceTo = useRef('');
+
+
+    const handleToInput = () => {
+        console.log(priceFrom.current.value);
+        console.log(priceTo.current.value);
+    }
+
     function arraysEqual(arr1, arr2) {
         if (arr1.length !== arr2.length) return false;
         return arr1.every((value, index) => value === arr2[index]);
     }
-
-    const handleResetButton = () => {
-        setFilteredItems(courses);
-    }
-
 
     const handleCategory = (category, checkboxStatus) => {
         console.log(checkboxStatus);
@@ -135,7 +139,7 @@ const Courses = () => {
                             <header className="flex items-center justify-between p-4">
                                 <span className="text-sm "> {selectedItems.length} Selected </span>
 
-                                <button type="button" className="text-sm underline underline-offset-4" onClick={handleResetButton}>
+                                <button type="button" className="text-sm underline underline-offset-4">
                                     Reset
                                 </button>
                             </header>
@@ -170,9 +174,9 @@ const Courses = () => {
 
                         <div className="border-t border-gray-700 bg-gray-900">
                             <header className="flex items-center justify-between p-4">
-                                <span className="text-sm"> The highest price is $600 </span>
+                                <span className="text-sm"> The highest price is $40 </span>
 
-                                <button type="button" className="text-sm text-gray-900 underline underline-offset-4">
+                                <button type="button" className="text-sm underline underline-offset-4">
                                     Reset
                                 </button>
                             </header>
@@ -185,7 +189,7 @@ const Courses = () => {
                                         <input
                                             type="number"
                                             id="FilterPriceFrom"
-                                            placeholder="From"
+                                            placeholder="From" ref={priceFrom}
                                             className="w-full bg-gray-900 text-white rounded-md border-gray-700 shadow-sm sm:text-sm border-b px-1"
                                         />
                                     </label>
@@ -196,7 +200,7 @@ const Courses = () => {
                                         <input
                                             type="number"
                                             id="FilterPriceTo"
-                                            placeholder="To"
+                                            placeholder="To" ref={priceTo} onChange={() => handleToInput()}
                                             className="w-full bg-gray-900 text-white rounded-md border-gray-700 shadow-sm sm:text-sm border-b px-1"
                                         />
                                     </label>
