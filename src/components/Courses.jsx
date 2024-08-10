@@ -1,12 +1,81 @@
+import { useState } from "react";
 import courses from "../data/courses"
+import CategoryList from "./CategoryList";
 import EducatorPlusCard from "./EducatorPlusCard"
 
 const Courses = () => {
+    let AICount = courses.filter(item => item.category == 'AI');
+    let dataScienceCount = courses.filter(item => item.category == 'Data Science');
+    let programmingCount = courses.filter(item => item.category == 'Programming');
+    let webDevtCount = courses.filter(item => item.category == 'Web Development');
+    let appDevCount = courses.filter(item => item.category == 'App Development');
+    let cloudComputingCount = courses.filter(item => item.category == 'Cloud Computing');
+
+    let [filteredItems, setFilteredItems] = useState(courses);
+
+    const handleCategory = (category) => {
+        if (category == 'All') {
+            setFilteredItems(courses);
+        }
+        // console.log(category);
+        else {
+            let filteredItem = courses.filter(item => item.category == category);
+            console.log(filteredItem);
+            let mergedItems = [...filteredItem, ...filteredItems];
+            // console.log(mergedItems);
+            setFilteredItems(filteredItem);
+        }
+    }
+
+    let categoryItems = [
+        {
+            id: 1,
+            name: 'All',
+            count: courses.length,
+        },
+
+        {
+            id: 2,
+            name: 'AI',
+            count: AICount.length,
+        },
+
+        {
+            id: 3,
+            name: 'Data Science',
+            count: dataScienceCount.length,
+        },
+
+        {
+            id: 4,
+            name: 'Programming',
+            count: programmingCount.length,
+        },
+
+        {
+            id: 5,
+            name: 'Web Development',
+            count: webDevtCount.length,
+        },
+
+        {
+            id: 6,
+            name: 'App Development',
+            count: appDevCount.length,
+        },
+
+        {
+            id: 7,
+            name: 'Cloud Computing',
+            count: cloudComputingCount.length,
+        },
+    ];
+
     return <>
         <section className="bg-[url('bg-texture.png')] bg-gray-900 text-white" >
-            <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 sm:py-12 flex">
+            <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 sm:py-12 flex items-start justify-start">
 
-                <div className="space-y-2 w-[50rem] mr-4">
+                <div className="space-y-2 mr-4 w-[15rem] flex-shrink-0">
                     <details
                         className="overflow-hidden rounded border border-gray-700 [&_summary::-webkit-details-marker]:hidden"
                     >
@@ -39,62 +108,16 @@ const Courses = () => {
                             </header>
 
                             <ul className="space-y-1 border-t border-gray-700 p-4">
-                                <li>
-                                    <label htmlFor="FilterInStock" className="inline-flex items-center gap-2">
-                                        <input type="checkbox" id="FilterInStock" className="size-5 rounded border-gray-300" />
-
-                                        <span className="text-sm font-medium"> AI (5+) </span>
-                                    </label>
-                                </li>
-
-                                <li>
-                                    <label htmlFor="FilterPreOrder" className="inline-flex items-center gap-2">
-                                        <input type="checkbox" id="FilterPreOrder" className="size-5 rounded border-gray-700" />
-
-                                        <span className="text-sm font-medium"> Programming (3+) </span>
-                                    </label>
-                                </li>
-
-                                <li>
-                                    <label htmlFor="FilterOutOfStock" className="inline-flex items-center gap-2">
-                                        <input type="checkbox" id="FilterOutOfStock" className="size-5 rounded border-gray-700" />
-
-                                        <span className="text-sm font-medium"> Data Science (10+) </span>
-                                    </label>
-                                </li>
-
-                                <li>
-                                    <label htmlFor="FilterOutOfStock" className="inline-flex items-center gap-2">
-                                        <input type="checkbox" id="FilterOutOfStock" className="size-5 rounded border-gray-700" />
-
-                                        <span className="text-sm font-medium"> Web Development (10+) </span>
-                                    </label>
-                                </li>
-
-                                <li>
-                                    <label htmlFor="FilterOutOfStock" className="inline-flex items-center gap-2">
-                                        <input type="checkbox" id="FilterOutOfStock" className="size-5 rounded border-gray-700" />
-
-                                        <span className="text-sm font-medium"> App Development (10+) </span>
-                                    </label>
-                                </li>
-
-                                <li>
-                                    <label htmlFor="FilterOutOfStock" className="inline-flex items-center gap-2">
-                                        <input type="checkbox" id="FilterOutOfStock" className="size-5 rounded border-gray-700" />
-
-                                        <span className="text-sm font-medium"> Cloud Computing (10+) </span>
-                                    </label>
-                                </li>
+                                {categoryItems.map(item => <CategoryList key={item.id} item={item} handleCategory={handleCategory}></CategoryList>)}
                             </ul>
                         </div>
                     </details>
 
                     <details
-                        className="overflow-hidden rounded border border-gray-300 [&_summary::-webkit-details-marker]:hidden"
+                        className="overflow-hidden rounded border border-gray-700 [&_summary::-webkit-details-marker]:hidden"
                     >
                         <summary
-                            className="flex cursor-pointer items-center justify-between gap-2 bg-white p-4 text-gray-900 transition"
+                            className="flex cursor-pointer items-center justify-between gap-2 bg-gray-900 p-4 transition"
                         >
                             <span className="text-sm font-medium"> Price </span>
 
@@ -112,36 +135,36 @@ const Courses = () => {
                             </span>
                         </summary>
 
-                        <div className="border-t border-gray-200 bg-white">
+                        <div className="border-t border-gray-700 bg-gray-900">
                             <header className="flex items-center justify-between p-4">
-                                <span className="text-sm text-gray-700"> The highest price is $600 </span>
+                                <span className="text-sm"> The highest price is $600 </span>
 
                                 <button type="button" className="text-sm text-gray-900 underline underline-offset-4">
                                     Reset
                                 </button>
                             </header>
 
-                            <div className="border-t border-gray-200 p-4">
+                            <div className="border-t border-gray-700 p-4">
                                 <div className="flex justify-between gap-4">
                                     <label htmlFor="FilterPriceFrom" className="flex items-center gap-2">
-                                        <span className="text-sm text-gray-600">$</span>
+                                        <span className="text-sm">$</span>
 
                                         <input
                                             type="number"
                                             id="FilterPriceFrom"
                                             placeholder="From"
-                                            className="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+                                            className="w-full bg-gray-900 text-white rounded-md border-gray-700 shadow-sm sm:text-sm border-b px-1"
                                         />
                                     </label>
 
                                     <label htmlFor="FilterPriceTo" className="flex items-center gap-2">
-                                        <span className="text-sm text-gray-600">$</span>
+                                        <span className="text-sm">$</span>
 
                                         <input
                                             type="number"
                                             id="FilterPriceTo"
                                             placeholder="To"
-                                            className="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+                                            className="w-full bg-gray-900 text-white rounded-md border-gray-700 shadow-sm sm:text-sm border-b px-1"
                                         />
                                     </label>
                                 </div>
@@ -149,12 +172,14 @@ const Courses = () => {
                         </div>
                     </details>
                 </div>
+
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    {courses.map(item => {
+                    {filteredItems.map(item => {
                         return <EducatorPlusCard key={item.id} item={item}></EducatorPlusCard>
                     })}
 
                 </div>
+
             </div>
         </section>
     </>

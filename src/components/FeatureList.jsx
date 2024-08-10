@@ -1,5 +1,5 @@
 const FeatureList = ({ item }) => {
-    console.log(item);
+    // console.log(item);
     return (
         <li className="flex text-left justify-start items-start border-t border-gray-700 p-3">
             <svg
