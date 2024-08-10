@@ -12,16 +12,24 @@ const Courses = () => {
     let cloudComputingCount = courses.filter(item => item.category == 'Cloud Computing');
 
     let [filteredItems, setFilteredItems] = useState(courses);
+    let [selectedItems, setSelectedItems] = useState([]);
 
     function arraysEqual(arr1, arr2) {
         if (arr1.length !== arr2.length) return false;
         return arr1.every((value, index) => value === arr2[index]);
     }
 
+    const handleResetButton = () => {
+        setFilteredItems(courses);
+    }
+
 
     const handleCategory = (category, checkboxStatus) => {
         console.log(checkboxStatus);
         if (checkboxStatus == true) {
+            selectedItems.push(category);
+            console.log(selectedItems);
+            setSelectedItems(selectedItems);
             if (category == 'All') {
                 setFilteredItems(courses);
             }
@@ -44,6 +52,9 @@ const Courses = () => {
         }
 
         else {
+            selectedItems.pop(category);
+            console.log(selectedItems);
+            setSelectedItems(selectedItems);
             let removeItems = filteredItems.filter(item => item.category != category);
             setFilteredItems(removeItems);
         }
@@ -122,9 +133,9 @@ const Courses = () => {
 
                         <div className="border-t border-gray-700 bg-gray-900">
                             <header className="flex items-center justify-between p-4">
-                                <span className="text-sm "> 0 Selected </span>
+                                <span className="text-sm "> {selectedItems.length} Selected </span>
 
-                                <button type="button" className="text-sm underline underline-offset-4">
+                                <button type="button" className="text-sm underline underline-offset-4" onClick={handleResetButton}>
                                     Reset
                                 </button>
                             </header>
