@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import courses from "../data/courses"
 import CategoryList from "./CategoryList";
 import EducatorPlusCard from "./EducatorPlusCard"
+import { useDispatch, useSelector } from "react-redux";
+import { courseActions } from "../store/courseSlice";
 
 const Courses = () => {
     let AICount = courses.filter(item => item.category == 'AI');
@@ -11,22 +13,39 @@ const Courses = () => {
     let appDevCount = courses.filter(item => item.category == 'App Development');
     let cloudComputingCount = courses.filter(item => item.category == 'Cloud Computing');
 
-    let [filteredItems, setFilteredItems] = useState(courses);
+    let courseList = useSelector(store => store.courses);
+    console.log(courseList)
+    const dispatch = useDispatch();
+
+    // let [courseList, setFilteredItems] = useState(courses);
     let [selectedItems, setSelectedItems] = useState([]);
 
     const priceFrom = useRef('');
     const priceTo = useRef('');
 
-
-    const handleToInput = () => {
+    const handleToInput = (itemsToFilter = courseList) => {
         let priceF = parseInt(priceFrom.current.value);
         let priceT = parseInt(priceTo.current.value);
         console.log(priceF);
         console.log(priceT);
-        console.log(courses);
-        let filteredItem = courses.filter(item => item.price >= priceF && item.price <= priceT);
-        console.log(filteredItem);
-        setFilteredItems(filteredItem);
+        if (selectedItems.length == 0) {
+            let filteredItem = courses.filter(item => item.price >= priceF && item.price <= priceT);
+            if (filteredItem.length == 0) return
+            console.log(filteredItem);
+            // setFilteredItems(filteredItem);
+            dispatch(courseActions.filteredCourses(filteredItem));
+        }
+
+        else {
+            console.log(selectedItems);
+            console.log('courseList');
+            console.log(courseList);
+            let filteredItem = itemsToFilter.filter(item => item.price >= priceF && item.price <= priceT);
+            if (filteredItem.length == 0) return
+            console.log(filteredItem);
+            // setFilteredItems(filteredItem);
+            dispatch(courseActions.filteredCourses(filteredItem));
+        }
     }
 
     function arraysEqual(arr1, arr2) {
@@ -41,22 +60,29 @@ const Courses = () => {
             console.log(selectedItems);
             setSelectedItems(selectedItems);
             if (category == 'All') {
-                setFilteredItems(courses);
+                // setFilteredItems(courses);
+                dispatch(courseActions.filteredCourses(courses));
+
             }
             // console.log(category);
             else {
                 let filteredItem = courses.filter(item => item.category == category);
                 console.log(filteredItem);
-                if (arraysEqual(filteredItems, courses)) {
+                if (arraysEqual(courseList, courses)) {
                     console.log('equal');
                     console.log(filteredItem);
-                    setFilteredItems(filteredItem);
+                    // setFilteredItems(filteredItem);
+                    dispatch(courseActions.filteredCourses(filteredItem));
                 }
 
                 else {
-                    let mergedItems = [...filteredItem, ...filteredItems];
+                    let mergedItems = [...filteredItem, ...courseList];
+                    console.log('mergedItems');
                     console.log(mergedItems);
-                    setFilteredItems(mergedItems);
+                    // setFilteredItems(mergedItems); //jb m yhn pr set kr rhi merged items ko
+                    dispatch(courseActions.filteredCourses(mergedItems));
+                    // console.log(courseList); // to yhn courseList shi set q n horhy?
+                    handleToInput(mergedItems);
                 }
             }
         }
@@ -65,8 +91,9 @@ const Courses = () => {
             selectedItems.pop(category);
             console.log(selectedItems);
             setSelectedItems(selectedItems);
-            let removeItems = filteredItems.filter(item => item.category != category);
-            setFilteredItems(removeItems);
+            let removeItems = courseList.filter(item => item.category != category);
+            // setFilteredItems(removeItems);
+            dispatch(courseActions.filteredCourses(removeItems));
         }
     }
 
@@ -217,7 +244,7 @@ const Courses = () => {
                 </div>
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    {filteredItems.map(item => {
+                    {courseList.map(item => {
                         return <EducatorPlusCard key={item.id} item={item}></EducatorPlusCard>
                     })}
 

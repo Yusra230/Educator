@@ -7,6 +7,8 @@ import './index.css'
 import Courses from './components/Courses.jsx';
 import Home from './routes/Home.jsx';
 import SingleCourse from './components/SingleCourse.jsx';
+import { Provider } from 'react-redux';
+import store from './store/index.js';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <Provider store={store}>
+      <RouterProvider router={router}></RouterProvider>
+    </Provider>
   </React.StrictMode>,
 )

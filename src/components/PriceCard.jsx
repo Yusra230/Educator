@@ -29,7 +29,7 @@ const PriceCard = ({ item }) => {
 
             <div className="">
                 <ul className="mt-2 space-y-2 sm:mt-4">
-                    {item.features.map(item => <FeatureList item={item}></FeatureList>)}
+                    {item.features.map(item => <FeatureList key={item.id} item={item}></FeatureList>)}
                 </ul>
             </div>
         </div>

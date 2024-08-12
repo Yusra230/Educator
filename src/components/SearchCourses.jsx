@@ -4,34 +4,38 @@ const SearchCourses = () => {
     let categoryName = [
         {
             id: 1,
-            name: 'Business',
+            name: 'AI',
         },
 
         {
             id: 2,
-            name: 'Computer Science',
-        },
-
-        {
-            id: 3,
             name: 'Data Science',
         },
 
         {
+            id: 3,
+            name: 'Programming',
+        },
+
+        {
             id: 4,
-            name: 'Health',
+            name: 'Web Development',
         },
 
         {
             id: 5,
-            name: 'Information Technology',
+            name: 'App Development',
         },
 
         {
             id: 6,
-            name: 'Arts and Humanities',
+            name: 'Cloud Computing',
         },
     ];
+
+    const handleCategoryButton = (category) => {
+        console.log(`${category }button clicked`);
+    }
 
     return <>
         <section className="bg-gray-900 text-white py-16">
@@ -71,8 +75,8 @@ const SearchCourses = () => {
                 </div>
 
                 <div className="categories space-x-3">
-                    <span>Popular</span>
-                    {categoryName.map(item=><CategoryButton key={item.id} item={item}></CategoryButton>)}
+                    <span className="font-bold">Popular</span>
+                    {categoryName.map(item => <CategoryButton key={item.id} item={item} handleCategoryButton={handleCategoryButton}></CategoryButton>)}
 
                 </div>
             </div>
