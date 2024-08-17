@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom"
 import EducatorPlusCard from "./EducatorPlusCard"
 
 const EducatorPlusCardSection = () => {
     let EducatorPlusObj = [
         {
             id: 1,
-            mainImg:'course1.jpg',
+            mainImg: 'course1.jpg',
             logo: 'googleL.png',
             logoName: 'Google',
             title: 'Google AI Essentials',
@@ -13,7 +14,7 @@ const EducatorPlusCardSection = () => {
 
         {
             id: 2,
-            mainImg:'course2.jpg',
+            mainImg: 'course2.jpg',
             logo: 'logo2.png',
             logoName: 'University of Michigan',
             title: 'Python For Everybody',
@@ -22,7 +23,7 @@ const EducatorPlusCardSection = () => {
 
         {
             id: 3,
-            mainImg:'course3.jpg',
+            mainImg: 'course3.jpg',
             logo: 'logo3.png',
             logoName: 'Vanderbuilt University',
             title: 'Prompt Engineering',
@@ -30,7 +31,7 @@ const EducatorPlusCardSection = () => {
 
         {
             id: 4,
-            mainImg:'course4.jpg',
+            mainImg: 'course4.jpg',
             logo: 'logo4.png',
             logoName: 'IBM',
             title: 'IBM Data Science',
@@ -45,19 +46,18 @@ const EducatorPlusCardSection = () => {
                 </div>
 
                 <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-                    {EducatorPlusObj.map(item=>{
-                         return <EducatorPlusCard key={item.id} item={item}></EducatorPlusCard>
+                    {EducatorPlusObj.map(item => {
+                        return <EducatorPlusCard key={item.id} item={item}></EducatorPlusCard>
                     })}
-                   
+
                 </div>
 
                 <div className="mt-4">
-                    <a
-                        href="#"
+                    <Link to={'/courses'}
                         className="inline-block rounded bg-indigo-600  px-6 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none"
                     >
-                        Show 8 more
-                    </a>
+                        Show more
+                    </Link>
                 </div>
             </div>
         </section>

@@ -6,6 +6,7 @@ import { BiDollar } from "react-icons/bi";
 import Testimonials from "./Testimonials";
 
 const SingleCourse = () => {
+    scrollTo(0,0);
     const params = useParams();
 
     const id = Number(params.id);

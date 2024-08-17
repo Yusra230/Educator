@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { courseActions } from "../store/courseSlice";
 
 const Courses = () => {
+    scrollTo(0,0);
     let AICount = courses.filter(item => item.category == 'AI');
     let dataScienceCount = courses.filter(item => item.category == 'Data Science');
     let programmingCount = courses.filter(item => item.category == 'Programming');
