@@ -40,7 +40,11 @@ const Courses = () => {
             console.log(selectedItems);
             console.log('courseList');
             console.log(courseList);
-            let filteredItem = itemsToFilter.filter(item => item.price >= priceF && item.price <= priceT);
+            let updatedList = [];
+            selectedItems.forEach(item => updatedList.push(...courses.filter(course => course.category == item)));
+            console.log('updated list bases on selected Items');
+            console.log(updatedList);
+            let filteredItem = updatedList.filter(item => item.price >= priceF && item.price <= priceT);
             if (filteredItem.length == 0) return
             console.log(filteredItem);
             // setFilteredItems(filteredItem);
@@ -55,7 +59,12 @@ const Courses = () => {
 
     const handleCategory = (category, checkboxStatus) => {
         console.log(checkboxStatus);
+        // let updatedSelectedItems = [...selectedItems];
+        // console.log(updatedSelectedItems)
         if (checkboxStatus == true) {
+            // updatedSelectedItems.push(category);
+            // console.log(updatedSelectedItems);
+            // setSelectedItems(updatedSelectedItems);
             selectedItems.push(category);
             console.log(selectedItems);
             setSelectedItems(selectedItems);
@@ -88,6 +97,9 @@ const Courses = () => {
         }
 
         else {
+            //    updatedSelectedItems = updatedSelectedItems.filter(item => item !== category);
+            //     console.log(updatedSelectedItems);
+            //     setSelectedItems(updatedSelectedItems);
             selectedItems.pop(category);
             console.log(selectedItems);
             setSelectedItems(selectedItems);
