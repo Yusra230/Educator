@@ -7,7 +7,7 @@ const Header = () => {
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex-1 md:flex md:items-center md:gap-12">
-                      <a href="" className="text-white text-lg font-bold">EDUCATOR</a>
+                      <Link to={'/'} className="text-white text-lg font-bold">EDUCATOR</Link>
                     </div>
 
                     <div className="md:flex md:items-center md:gap-12">
@@ -47,7 +47,7 @@ const Header = () => {
 
                                 <div className="hidden sm:flex">
                                     <a
-                                        className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
+                                        className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-indigo-700"
                                         href="#"
                                     >
                                         Register
