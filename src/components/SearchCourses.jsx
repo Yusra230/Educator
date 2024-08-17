@@ -1,6 +1,11 @@
 import CategoryButton from "./CategoryButton";
+import courses from "../data/courses";
+import { useState } from "react";
+import EducatorPlusCard from "./EducatorPlusCard";
+
 
 const SearchCourses = () => {
+    const [selectedCategory, setSelectedCategory] = useState(null);
     let categoryName = [
         {
             id: 1,
@@ -34,11 +39,13 @@ const SearchCourses = () => {
     ];
 
     const handleCategoryButton = (category) => {
-        console.log(`${category }button clicked`);
+        setSelectedCategory(category);
     }
 
+    const filteredCourses = selectedCategory ? courses.filter(item => item.category === selectedCategory) : [];
+
     return <>
-        <section className="bg-gray-900 text-white py-16">
+        <section id="categories" className="bg-gray-900 text-white py-16">
             <div className="mx-auto text-center max-w-5xl">
                 <h2 className="text-3xl font-bold">Search the 7,000+ courses in Educator Plus</h2>
 
@@ -78,6 +85,12 @@ const SearchCourses = () => {
                     <span className="font-bold">Popular</span>
                     {categoryName.map(item => <CategoryButton key={item.id} item={item} handleCategoryButton={handleCategoryButton}></CategoryButton>)}
 
+                </div>
+            </div>
+
+            <div className="mx-auto max-w-screen-xl px-4 sm:px-6 sm:py-6 lg:px-8">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+                    {selectedCategory && filteredCourses.map(item => <EducatorPlusCard key={item.id} item={item}></EducatorPlusCard>)}
                 </div>
             </div>
         </section>

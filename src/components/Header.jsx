@@ -18,7 +18,7 @@ const Header = () => {
                                 </li>
 
                                 <li>
-                                    <a className=" transition hover:text-gray-200/75" href="#"> Categories </a>
+                                    <a className=" transition hover:text-gray-200/75" href="#categories"> Categories </a>
                                 </li>
 
                                 <li>
@@ -26,11 +26,11 @@ const Header = () => {
                                 </li>
 
                                 <li>
-                                    <a className=" transition hover:text-gray-200/75" href="#"> Services </a>
+                                    <a className=" transition hover:text-gray-200/75" href="#services"> Services </a>
                                 </li>
 
                                 <li>
-                                    <a className=" transition hover:text-gray-200/75" href="#"> Testimonials </a>
+                                    <a className=" transition hover:text-gray-200/75" href="#testimonials"> Testimonials </a>
                                 </li>
 
                             </ul>

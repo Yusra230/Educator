@@ -30,7 +30,7 @@ const Testimonials = () => {
     ];
 
     return <>
-        <section className="bg-[url('bg-texture.png')] bg-gray-900 text-white">
+        <section id="testimonials" className="bg-[url('bg-texture.png')] bg-gray-900 text-white">
             <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
                 <h2 className="text-2xl font-bold text-center">Join thousands of Educator Plus learners achieving their goals</h2>
 
