@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 const Registeration = () => {
     return <>
 
         <section className="bg-[url('bg-texture.png')] bg-gray-900 text-white">
-            <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 bg-gray-900 lg:py-10">
+            <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 bg-gray-900">
             <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
                 <aside className="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6">
                     <img
@@ -130,7 +132,7 @@ const Registeration = () => {
 
                                 <p className="mt-4 text-sm sm:mt-0">
                                     Already have an account? 
-                                    <a href="#" className=" underline"> Log in</a>.
+                                    <Link to={'/login'} className=" underline"> Log in</Link>.
                                 </p>
                             </div>
                         </form>

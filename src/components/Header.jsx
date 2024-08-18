@@ -38,11 +38,11 @@ const Header = () => {
 
                         <div className="flex items-center gap-4">
                             <div className="sm:flex sm:gap-4">
-                                <a
+                                <Link to={'/login'}
                                     className="rounded-md bg-indigo-600 transition hover:bg-indigo-700  px-5 py-2.5 text-sm font-medium text-white shadow"
                                 >
                                     Login
-                                </a>
+                                </Link>
 
                                 <div className="hidden sm:flex">
                                     <Link to={'/register'}
