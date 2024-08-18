@@ -9,6 +9,7 @@ import Home from './routes/Home.jsx';
 import SingleCourse from './components/SingleCourse.jsx';
 import { Provider } from 'react-redux';
 import store from './store/index.js';
+import Registeration from './components/Registeration.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       { path: '/', element: <Home /> },
       { path: '/courses', element: <Courses /> },
       { path: '/product/:id', element: <SingleCourse /> },
+      { path: '/register', element: <Registeration /> },
     ]
   }
 ])

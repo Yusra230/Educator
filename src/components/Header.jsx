@@ -40,18 +40,16 @@ const Header = () => {
                             <div className="sm:flex sm:gap-4">
                                 <a
                                     className="rounded-md bg-indigo-600 transition hover:bg-indigo-700  px-5 py-2.5 text-sm font-medium text-white shadow"
-                                    href="#"
                                 >
                                     Login
                                 </a>
 
                                 <div className="hidden sm:flex">
-                                    <a
+                                    <Link to={'/register'}
                                         className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-indigo-700"
-                                        href="#"
                                     >
                                         Register
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
 
