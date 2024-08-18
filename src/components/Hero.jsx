@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Hero = () => {
     return <>
         <section className="bg-[url('bg-texture.png')] bg-gray-900 text-white">
@@ -18,12 +20,12 @@ const Hero = () => {
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui hic atque tenetur quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, minus.
                         </p>
 
-                        <a
-                            href="#"
+                        <Link
+                           to={'/courses'}
                             className="mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium transition hover:bg-indigo-700 focus:outline-none"
                         >
                             Get Started Today
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -17,12 +17,12 @@ const SingleCourse = () => {
     return <>
         <section className="bg-gray-900 text-white">
             <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 items-center">
-                    <div className="relative h-50 overflow-hidden rounded-lg sm:h-80 lg:order-last">
+                <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 items-center">
+                    <div className="relative h-50 overflow-hidden rounded-lg h-80 lg:order-last">
                         <img
                             alt=""
                             src={course.mainImg}
-                            className="absolute inset-0 h-full w-full object-cover"
+                            className="absolute inset-0 h-full w-full object-contain"
                         />
                     </div>
 

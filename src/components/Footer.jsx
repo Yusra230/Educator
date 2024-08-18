@@ -86,7 +86,7 @@ const Footer = () => {
                 <div
                     className="flex flex-col items-center gap-4 rounded-lg bg-indigo-700 p-6 shadow-lg sm:flex-row sm:justify-between"
                 >
-                    <strong className="text-xl text-white sm:text-xl"> Make Your Next Career Move! </strong>
+                    <strong className="text-xl text-center text-white sm:text-xl"> Make Your Next Career Move! </strong>
 
                     <a
                         className="inline-flex items-center gap-2 rounded-full border border-white bg-white px-8 py-3 text-indigo-700 hover:bg-transparent hover:text-white focus:outline-none focus:ring active:bg-white/90"
