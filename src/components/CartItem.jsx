@@ -9,7 +9,7 @@ const CartItem = ({ item, removeItem }) => {
     const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
 
     return <>
-        <li className="flex items-center gap-4">
+        <li className="flex items-center gap-4 border-t border-gray-700 py-4">
             <img
                 src={item.mainImg}
                 alt=""
@@ -19,7 +19,7 @@ const CartItem = ({ item, removeItem }) => {
             <div>
                 <h3 className="text-base font-semibold">{item.title}</h3>
 
-                <div className="mt-0.5 text-sm text-gray-200">
+                <div className="text-sm text-gray-200">
                     <div className="">By: {item.instructor}</div>
                     <div className="flex items-center">
                         {item.rating}
