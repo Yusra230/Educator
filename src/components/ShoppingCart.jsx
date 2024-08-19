@@ -18,7 +18,7 @@ const ShoppingCart = () => {
 
     return <>
         <section className=" bg-gray-900 text-white">
-            <div className="mx-auto max-w-screen-xl px-2 py-8 sm:px-6 sm:py-12 lg:px-8">
+            <div className="mx-auto max-w-screen-xl px- py-8 sm:px-6 sm:py-12 lg:px-8">
                 <div className="mx-auto max-w-7xl">
                     <header className="text-center">
                         <h1 className="text-xl font-bold sm:text-4xl">Your Cart</h1>
@@ -29,10 +29,10 @@ const ShoppingCart = () => {
                             {cartItems.map(item => <CartItem key={item.id} item={item} removeItem={removeItem}></CartItem>)}
                         </ul>
 
-                        <div className="mt-8 flex justify-center border-gray-100 pt-8 w-[100%] md:w-[30%]">
+                        <div className="flex justify-center border-gray-100 w-[100%] md:w-[30%]">
                             <div className="space-y-4 w-[100%] md:w-[80%]">
-                                <dl className="space-y-0.5 text-sm">
-                                    <div className="flex justify-between">
+                                <dl className="text-sm">
+                                    {/* <div className="flex justify-between">
                                         <dt>Subtotal</dt>
                                         <dd>£250</dd>
                                     </div>
@@ -50,7 +50,16 @@ const ShoppingCart = () => {
                                     <div className="flex justify-between !text-base font-medium">
                                         <dt>Total</dt>
                                         <dd>£200</dd>
-                                    </div>
+                                    </div> */}
+
+                                    <h3>Total:</h3>
+                                    <h2 className="text-3xl font-bold">$314.96</h2>
+                                    <button
+                                        type="submit"
+                                        className="inline-block  bg-indigo-700 px-5 py-3 text-sm font-medium text-white w-full my-4"
+                                    >
+                                        Check out
+                                    </button>
                                 </dl>
 
                                 <div className="flex justify-end">
