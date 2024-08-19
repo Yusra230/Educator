@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
 import { FaCartShopping } from "react-icons/fa6";
+import { useSelector } from "react-redux";
 const Header = () => {
+    const cart = useSelector(store => store.cart);
+    console.log(cart);
 
     return <>
         <header className="bg-[url('bg-texture.png')] bg-[#2C3162]">
@@ -41,7 +44,7 @@ const Header = () => {
                                 <div className="relative mr-2">
                                     <Link to={'/cart'}>
                                         <span className="absolute top-0 left-4 transform -translate-y-1/2  bg-indigo-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                                            0
+                                            {cart.length}
                                         </span>
                                         <FaCartShopping className="text-2xl text-white" />
 

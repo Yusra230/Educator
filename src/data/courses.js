@@ -6,12 +6,12 @@ let courses = [
         logoName: 'Google',
         title: 'Google AI Essentials',
         description: 'Launch your career in Google AI Essentials. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price: 20,
+        price: 20.99,
         duration: '12',
         rating: '4.5',
-        category: 'AI'
+        category: 'AI',
+        instructor: 'Dr. John Doe'
     },
-
     {
         id: 2,
         mainImg: '/course2.jpg',
@@ -19,12 +19,12 @@ let courses = [
         logoName: 'University of Michigan',
         title: 'Python For Everybody',
         description: 'Launch your career in Python. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price: 30,
+        price: 30.99,
         duration: '15',
         rating: '4.6',
-        category: 'Programming'
+        category: 'Programming',
+        instructor: 'Prof. Jane Smith'
     },
-
     {
         id: 3,
         mainImg: '/course3.jpg',
@@ -32,12 +32,12 @@ let courses = [
         logoName: 'Vanderbuilt University',
         title: 'Prompt Engineering',
         description: 'Launch your career in Prompt Engineering. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price: 30,
+        price: 30.99,
         duration: '10',
         rating: '4.7',
-        category: 'AI'
+        category: 'AI',
+        instructor: 'Dr. Alice Johnson'
     },
-
     {
         id: 4,
         mainImg: '/course18.jpg',
@@ -45,12 +45,12 @@ let courses = [
         logoName: 'IBM',
         title: 'Data Science',
         description: 'Launch your career in Data Science. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price: 10,
+        price: 10.99,
         duration: '15',
         rating: '4.9',
-        category: 'Data Science'
+        category: 'Data Science',
+        instructor: 'Dr. Michael Brown'
     },
-
     {
         id: 5,
         mainImg: '/course5.jpg',
@@ -58,25 +58,25 @@ let courses = [
         logoName: 'Google',
         title: 'Data Science',
         description: 'Launch your career in Data Science. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price: 40,
+        price: 40.99,
         duration: '5',
         rating: '5',
-        category: 'Data Science'
+        category: 'Data Science',
+        instructor: 'Prof. Lisa White'
     },
-
     {
         id: 6,
         mainImg: '/course6.jpg',
         logo: '/logo4.png',
         logoName: 'IBM',
-        title: 'Artificial Intelligance',
-        description: 'Launch your career in Artificial Intelligance. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price: 25,
+        title: 'Artificial Intelligence',
+        description: 'Launch your career in Artificial Intelligence. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
+        price: 25.99,
         duration: '9',
         rating: '4.8',
-        category: 'AI'
+        category: 'AI',
+        instructor: 'Dr. James Green'
     },
-
     {
         id: 7,
         mainImg: '/course7.jpg',
@@ -84,12 +84,12 @@ let courses = [
         logoName: 'University of Michigan',
         title: 'Web Development',
         description: 'Launch your career in Web Development. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price: 20,
+        price: 20.99,
         duration: '12',
         rating: '4.5',
-        category: 'Web Development'
+        category: 'Web Development',
+        instructor: 'Prof. Emma Taylor'
     },
-
     {
         id: 8,
         mainImg: '/course8.jpg',
@@ -97,12 +97,12 @@ let courses = [
         logoName: 'Vanderbuilt University',
         title: 'App Development',
         description: 'Launch your career in App Development. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price: 20,
+        price: 20.99,
         duration: '12',
         rating: '4.5',
-        category: 'App Development'
+        category: 'App Development',
+        instructor: 'Dr. William Harris'
     },
-
     {
         id: 9,
         mainImg: '/course9.jpg',
@@ -110,12 +110,12 @@ let courses = [
         logoName: 'Google',
         title: 'Frontend Development',
         description: 'Launch your career in Frontend Development. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price: 20,
+        price: 20.99,
         duration: '12',
         rating: '4.5',
-        category: 'Web Development'
+        category: 'Web Development',
+        instructor: 'Prof. Olivia Martin'
     },
-
     {
         id: 10,
         mainImg: '/course10.jpg',
@@ -123,12 +123,12 @@ let courses = [
         logoName: 'University of Michigan',
         title: 'Machine Learning',
         description: 'Launch your career in Machine Learning. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price: 20,
+        price: 20.99,
         duration: '12',
         rating: '4.5',
-        category: 'AI'
+        category: 'AI',
+        instructor: 'Dr. Charlotte Wilson'
     },
-
     {
         id: 11,
         mainImg: '/course11.jpg',
@@ -136,12 +136,12 @@ let courses = [
         logoName: 'Google',
         title: 'Deep Learning',
         description: 'Launch your career in Deep Learning. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price: 20,
+        price: 20.99,
         duration: '12',
         rating: '4.5',
-        category: 'AI'
+        category: 'AI',
+        instructor: 'Dr. Henry Lee'
     },
-
     {
         id: 12,
         mainImg: '/course12.jpg',
@@ -149,25 +149,25 @@ let courses = [
         logoName: 'IBM',
         title: 'Cloud Computing',
         description: 'Launch your career in Cloud Computing. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
-        price: 20,
+        price: 20.99,
         duration: '12',
         rating: '4.5',
-        category: 'Cloud Computing'
+        category: 'Cloud Computing',
+        instructor: 'Prof. Amelia Davis'
     },
-
     {
         id: 13,
         mainImg: '/course13.jpg',
         logo: '/googleL.png',
         logoName: 'Google',
-        title: 'AJAX development',
+        title: 'AJAX Development',
         description: 'Launch your career in AJAX development. Gain the in-demand skills and hands-on experience to get job-ready in less than 4 months. No prior experience required.',
         price: 20,
         duration: '12',
         rating: '4.5',
-        category: 'Web Development'
+        category: 'Web Development',
+        instructor: 'Dr. Alexander Moore'
     },
-
     {
         id: 14,
         mainImg: '/course14.jpg',
@@ -178,9 +178,9 @@ let courses = [
         price: 20,
         duration: '12',
         rating: '4.5',
-        category: 'Web Development'
+        category: 'Web Development',
+        instructor: 'Prof. Mia Brown'
     },
-
     {
         id: 15,
         mainImg: '/course15.jpg',
@@ -191,9 +191,9 @@ let courses = [
         price: 20,
         duration: '12',
         rating: '4.5',
-        category: 'Programming'
+        category: 'Programming',
+        instructor: 'Dr. Benjamin Anderson'
     },
-
     {
         id: 16,
         mainImg: '/course16.jpg',
@@ -204,9 +204,9 @@ let courses = [
         price: 20,
         duration: '12',
         rating: '4.5',
-        category: 'Programming'
+        category: 'Programming',
+        instructor: 'Prof. Ella Clark'
     },
-
     {
         id: 17,
         mainImg: '/course17.jpg',
@@ -217,8 +217,23 @@ let courses = [
         price: 30,
         duration: '10',
         rating: '4.5',
-        category: 'Web Development'
+        category: 'Web Development',
+        instructor: 'Dr. Sophia Martinez'
     },
-];
+    {
+        id: 18,
+        mainImg: '/course11.jpg',
+        logo: '/logo2.png',
+        logoName: 'Stanford University',
+        title: 'Cybersecurity Fundamentals',
+        description: 'Gain in-depth knowledge of Cybersecurity and prepare for a career in this critical field. Hands-on experience and job-ready skills in 6 months.',
+        price: 35,
+        duration: '6',
+        rating: '4.5',
+        category: 'Web Development',
+        instructor: 'Dr. Sophia Martinez'
+    }
+]
+
 
 export default courses;

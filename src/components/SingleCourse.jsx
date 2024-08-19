@@ -4,15 +4,22 @@ import { FaRegClock } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { BiDollar } from "react-icons/bi";
 import Testimonials from "./Testimonials";
+import { useDispatch } from "react-redux";
+import cartSlice, { cartActions } from "../store/CartSlice";
 
 const SingleCourse = () => {
-    scrollTo(0,0);
+    scrollTo(0, 0);
     const params = useParams();
+    const dispatch = useDispatch()
 
     const id = Number(params.id);
 
     const course = courses.find(course => course.id === id);
     console.log(course);
+
+    const addToCart = () => {
+        dispatch(cartActions.addToCart(id));
+    }
 
     return <>
         <section className="bg-gray-900 text-white">
@@ -47,7 +54,7 @@ const SingleCourse = () => {
 
                         </div>
 
-                        <a
+                        <a onClick={() => addToCart(id)}
                             href="#"
                             className="mt-4 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none"
                         >
@@ -57,7 +64,7 @@ const SingleCourse = () => {
                 </div>
             </div>
 
-           <Testimonials></Testimonials>
+            <Testimonials></Testimonials>
 
         </section>
 
