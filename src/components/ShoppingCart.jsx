@@ -13,24 +13,24 @@ const ShoppingCart = () => {
     const removeItem = (id) => {
         const newCart = cart.filter(item => item !== id);
         dispatch(cartActions.removeFromCart(newCart));
-        console.log(newCart);
+        console.log(newCart)
     };
 
     return <>
         <section className=" bg-gray-900 text-white">
-            <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-                <div className="mx-auto max-w-4xl">
+            <div className="mx-auto max-w-screen-xl px-2 py-8 sm:px-6 sm:py-12 lg:px-8">
+                <div className="mx-auto max-w-7xl">
                     <header className="text-center">
                         <h1 className="text-xl font-bold sm:text-4xl">Your Cart</h1>
                     </header>
 
-                    <div className="mt-8">
-                        <ul className="space-y-4">
+                    <div className="mt-8 flex flex-col md:flex-row">
+                        <ul className="space-y-4 w-[100%] md:w-[70%]">
                             {cartItems.map(item => <CartItem key={item.id} item={item} removeItem={removeItem}></CartItem>)}
                         </ul>
 
-                        <div className="mt-8 flex justify-end border-t border-gray-100 pt-8">
-                            <div className="w-screen max-w-lg space-y-4">
+                        <div className="mt-8 flex justify-center border-gray-100 pt-8 w-[100%] md:w-[30%]">
+                            <div className="space-y-4 w-[100%] md:w-[80%]">
                                 <dl className="space-y-0.5 text-sm">
                                     <div className="flex justify-between">
                                         <dt>Subtotal</dt>

@@ -3,7 +3,7 @@ import { FaStarHalfAlt } from "react-icons/fa";
 import { FaRegHeart, FaRegStar, FaStar } from "react-icons/fa6";
 import { GoDotFill } from "react-icons/go";
 
-const CartItem = ({ item , removeItem}) => {
+const CartItem = ({ item, removeItem }) => {
     const fullStars = Math.floor(item.rating); // Number of full stars
     const hasHalfStar = item.rating % 1 >= 0.5; // Check if there should be a half star
     const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
@@ -13,7 +13,7 @@ const CartItem = ({ item , removeItem}) => {
             <img
                 src={item.mainImg}
                 alt=""
-                className="w-30 h-20 rounded object-cover"
+                className="w-14 sm:w-32 sm:h-20 rounded object-cover"
             />
 
             <div>
@@ -37,18 +37,20 @@ const CartItem = ({ item , removeItem}) => {
                         <span className="ml-4 flex items-center"> <GoDotFill className="mr-1" /> All levels</span>
                     </div>
                 </div>
+
             </div >
 
-            <div className="flex flex-1 items-center justify-end gap-2">
-                <div className="font-bold mr-2 text-lg">${item.price}</div>
+            <div className="flex flex-1 items-center justify-end flex-col sm:flex-row gap-2">
+                <div className="font-bold sm:mr-2 sm:text-lg">${item.price}</div>
+                <div className="space-x-2">
+                    <button className="transition hover:text-red-600">
+                        <FaRegHeart className="sm:text-xl" />
+                    </button>
 
-                <button className="transition hover:text-red-600">
-                    <FaRegHeart className="text-xl" />
-                </button>
-
-                <button className="transition hover:text-red-600" onClick={() => removeItem(item.id)}>
-                    <AiFillDelete className="text-xl" />
-                </button>
+                    <button className="transition hover:text-red-600" onClick={() => removeItem(item.id)}>
+                        <AiFillDelete className="sm:text-xl" />
+                    </button>
+                </div>
             </div>
         </li >
     </>
