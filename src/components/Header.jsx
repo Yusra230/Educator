@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-
+import { FaCartShopping } from "react-icons/fa6";
 const Header = () => {
 
     return <>
@@ -7,7 +7,7 @@ const Header = () => {
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex-1 md:flex md:items-center md:gap-12">
-                      <Link to={'/'} className="text-white text-lg font-bold">EDUCATOR</Link>
+                        <Link to={'/'} className="text-white text-lg font-bold">EDUCATOR</Link>
                     </div>
 
                     <div className="md:flex md:items-center md:gap-12">
@@ -37,12 +37,24 @@ const Header = () => {
                         </nav>
 
                         <div className="flex items-center gap-4">
-                            <div className="sm:flex sm:gap-4">
-                                <Link to={'/login'}
-                                    className="rounded-md bg-indigo-600 transition hover:bg-indigo-700  px-5 py-2.5 text-sm font-medium text-white shadow"
-                                >
-                                    Login
-                                </Link>
+                            <div className="sm:flex sm:gap-4 sm:items-center">
+                                <div className="relative mr-2">
+                                    <Link to={'/cart'}>
+                                        <span className="absolute top-0 left-4 transform -translate-y-1/2  bg-indigo-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                                            0
+                                        </span>
+                                        <FaCartShopping className="text-2xl text-white" />
+
+                                    </Link>
+                                </div>
+
+                                <div className="hidden sm:flex">
+                                    <Link to={'/login'}
+                                        className="rounded-md bg-indigo-600 transition hover:bg-indigo-700  px-5 py-2.5 text-sm font-medium text-white shadow"
+                                    >
+                                        Login
+                                    </Link>
+                                </div>
 
                                 <div className="hidden sm:flex">
                                     <Link to={'/register'}
@@ -72,6 +84,7 @@ const Header = () => {
                 </div>
             </div>
         </header>
+
     </>
 }
 

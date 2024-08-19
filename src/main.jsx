@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 import store from './store/index.js';
 import Registeration from './components/Registeration.jsx';
 import Login from './components/Login.jsx';
+import ShoppingCart from './components/ShoppingCart.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: '/product/:id', element: <SingleCourse /> },
       { path: '/register', element: <Registeration /> },
       { path: '/login', element: <Login /> },
+      { path: '/cart', element: <ShoppingCart /> },
     ]
   }
 ])
