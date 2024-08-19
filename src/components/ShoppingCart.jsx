@@ -1,12 +1,21 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CartItem from "./CartItem";
 import courses from "../data/courses";
+import cartSlice, { cartActions } from "../store/CartSlice";
 
 
 const ShoppingCart = () => {
     const cart = useSelector(store => store.cart);
     const cartItems = courses.filter(course => cart.includes(course.id));
     console.log(cartItems);
+    const dispatch = useDispatch();
+
+    const removeItem = (id) => {
+        const newCart = cart.filter(item => item !== id);
+        dispatch(cartActions.removeFromCart(newCart));
+        console.log(newCart);
+    };
+
     return <>
         <section className=" bg-gray-900 text-white">
             <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
@@ -17,7 +26,7 @@ const ShoppingCart = () => {
 
                     <div className="mt-8">
                         <ul className="space-y-4">
-                           {cartItems.map(item=> <CartItem key={item.id} item={item}></CartItem>)}
+                            {cartItems.map(item => <CartItem key={item.id} item={item} removeItem={removeItem}></CartItem>)}
                         </ul>
 
                         <div className="mt-8 flex justify-end border-t border-gray-100 pt-8">
