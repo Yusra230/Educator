@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import CartItem from "./CartItem";
 import courses from "../data/courses";
 import cartSlice, { cartActions } from "../store/CartSlice";
+import { Link } from "react-router-dom";
 
 
 const ShoppingCart = () => {
@@ -9,6 +10,8 @@ const ShoppingCart = () => {
     const cartItems = courses.filter(course => cart.includes(course.id));
     console.log(cartItems);
     const dispatch = useDispatch();
+    let totalPrice = 0;
+    cartItems.forEach(item => totalPrice += item.price);
 
     const removeItem = (id) => {
         const newCart = cart.filter(item => item !== id);
@@ -25,16 +28,26 @@ const ShoppingCart = () => {
                     </header>
 
                     <h3 className="font-semibold text-gray-200 mb-2">{cart.length} Courses in Cart</h3>
+                    {cart.length == 0 && <div className="flex items-center justify-center flex-col">
+                        <img src="emptyCart.png" alt="" />
+                        <h3>Your cart is empty. Keep shopping to find a course!</h3>
+                        <Link to={'/courses'}
+                            type="submit"
+                            className="inline-block bg-indigo-700 px-5 py-3 text-sm font-medium text-white my-8 hover:bg-indigo-800 "
+                        >
+                            Keep Shopping
+                        </Link>
+                    </div>}
                     <div className="flex flex-col md:flex-row">
                         <ul className="w-[100%] md:w-[70%]">
                             {cartItems.map(item => <CartItem key={item.id} item={item} removeItem={removeItem}></CartItem>)}
                         </ul>
 
-                        <div className="flex justify-end border-gray-100 w-[100%] md:w-[30%] mt-4">
+                        {cart.length > 0 && <div className="flex justify-end border-gray-100 w-[100%] md:w-[30%] sm:mt-4">
                             <div className="space-y-3 w-[100%] md:w-[80%]">
                                 <div className="text-sm border-b border-gray-500">
                                     <h3 className="text-base text-gray-300 font-semibold">Total:</h3>
-                                    <h2 className="text-3xl font-bold">$314.96</h2>
+                                    <h2 className="text-3xl font-bold">${totalPrice}</h2>
                                     <button
                                         type="submit"
                                         className="inline-block  bg-indigo-700 px-5 py-3 text-sm font-medium text-white w-full my-4 hover:bg-indigo-800 "
@@ -65,7 +78,7 @@ const ShoppingCart = () => {
 
 
                             </div>
-                        </div>
+                        </div>}
                     </div>
                 </div>
             </div>
