@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom"
 import { FaCartShopping } from "react-icons/fa6";
 import { useSelector } from "react-redux";
+import { FaRegHeart } from "react-icons/fa";
 const Header = () => {
     const cart = useSelector(store => store.cart);
+    const wishlist = useSelector(store => store.wishlist);
     console.log(cart);
 
     return <>
@@ -50,6 +52,17 @@ const Header = () => {
 
                                     </Link>
                                 </div>
+
+                                <div className="relative mr-2">
+                                    <Link to={'/wishlist'}>
+                                        <span className="absolute top-0 left-4 transform -translate-y-1/2  bg-indigo-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                                           {wishlist.length}
+                                        </span>
+                                        <FaRegHeart className="text-2xl text-white" />
+
+                                    </Link>
+                                </div>
+
 
                                 <div className="hidden sm:flex">
                                     <Link to={'/login'}

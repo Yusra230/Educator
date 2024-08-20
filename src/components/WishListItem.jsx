@@ -1,17 +1,9 @@
 import { AiFillDelete } from "react-icons/ai";
-import { FaRegHeart } from "react-icons/fa6";
+import { FaRegHeart} from "react-icons/fa6";
 import { useDispatch } from "react-redux";
-import { WishListActions } from "../store/WiishListSlice";
 import Rating from "./Rating";
 
-const CartItem = ({ item, removeItem }) => {
-    const dispatch = useDispatch();
-
-    const addToWishlist = (id) => {
-        console.log(`wishlist : ${id}`);
-        dispatch(WishListActions.addToWishList(id));
-    }
-
+const WishListItem = ({ item, removeItem }) => {
     return <>
         <li className="flex items-center gap-4 border-t border-gray-700 py-4">
             <img
@@ -22,7 +14,7 @@ const CartItem = ({ item, removeItem }) => {
 
             <div>
                 <h3 className="text-base font-semibold">{item.title}</h3>
-                <Rating item={item}></Rating>
+               <Rating item={item}></Rating>
             </div >
 
             <div className="flex flex-1 items-center justify-end flex-col sm:flex-row gap-2">
@@ -41,4 +33,4 @@ const CartItem = ({ item, removeItem }) => {
     </>
 }
 
-export default CartItem
+export default WishListItem

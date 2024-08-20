@@ -11,7 +11,7 @@ const cartSlice = createSlice(
 
             removeFromCart: (state, action) => {
                return action.payload
-           }
+           },
         }
     }
 );

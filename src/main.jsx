@@ -12,6 +12,7 @@ import store from './store/index.js';
 import Registeration from './components/Registeration.jsx';
 import Login from './components/Login.jsx';
 import ShoppingCart from './components/ShoppingCart.jsx';
+import WishList from './components/WishList.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       { path: '/register', element: <Registeration /> },
       { path: '/login', element: <Login /> },
       { path: '/cart', element: <ShoppingCart /> },
+      { path: '/wishlist', element: <WishList /> },
     ]
   }
 ])
