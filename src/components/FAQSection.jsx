@@ -50,8 +50,8 @@ const FAQSection = () => {
 
     return <>
         <section className="bg-[url('bg-texture.png')] bg-gray-900 text-white py-12">
-            <h2 className="text-center font-bold sm:text-4xl mb-6">Frequently asked questions</h2>
-            <div className="space-y-4 max-w-screen-lg mx-auto">
+            <h2 className="text-center font-bold text-3xl sm:text-4xl mb-6">Frequently asked questions</h2>
+            <div className="space-y-4 max-w-screen-lg mx-auto px-2 lg:px-0">
                {FAQObj.map(item=> <FAQ key={item.id} item={item}></FAQ>)}
             </div>
         </section>

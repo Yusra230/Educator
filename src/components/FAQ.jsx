@@ -5,7 +5,7 @@ const FAQ = ({item}) => {
             
         >
             <summary className="flex cursor-pointer items-center justify-between gap-1.5">
-                <h2 className="text-lg font-medium">
+                <h2 className="md:text-lg font-medium">
                     {item.question}
                 </h2>
 
