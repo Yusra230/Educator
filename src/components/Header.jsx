@@ -42,7 +42,7 @@ const Header = () => {
                         </nav>
 
                         <div className="flex items-center gap-4">
-                            <div className="sm:flex sm:gap-4 sm:items-center">
+                            <div className="flex gap-4 items-center">
                                 <div className="relative mr-2">
                                     <Link to={'/cart'}>
                                         <span className="absolute top-0 left-4 transform -translate-y-1/2  bg-indigo-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
