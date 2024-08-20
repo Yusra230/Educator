@@ -3,6 +3,7 @@ import WishListItem from "./WishListItem"
 import courses from "../data/courses";
 import { WishListActions } from "../store/WiishListSlice";
 import { cartActions } from "../store/CartSlice";
+import { Link } from "react-router-dom";
 
 const WishList = () => {
     const wishlist = useSelector(store => store.wishlist);
@@ -26,6 +27,17 @@ const WishList = () => {
                     <header className="">
                         <h1 className="text-xl font-bold sm:text-4xl mb-8">Your WishList</h1>
                     </header>
+                    <h3 className="font-semibold text-gray-200 mb-2">{wishlist.length} Courses in Wishlist</h3>
+                    {wishlist.length == 0 && <div className="flex items-center justify-center flex-col">
+                        <img src="emptyCart.png" alt="" />
+                        <h3>Your wishlist is empty. Keep shopping to add your favourite course!</h3>
+                        <Link to={'/courses'}
+                            type="submit"
+                            className="inline-block bg-indigo-700 px-5 py-3 text-sm font-medium text-white my-8 hover:bg-indigo-800 "
+                        >
+                            Keep Shopping
+                        </Link>
+                    </div>}
 
                     <div className="mt-8">
                         <ul className="space-y-4">

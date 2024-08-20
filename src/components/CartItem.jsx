@@ -28,7 +28,7 @@ const CartItem = ({ item, removeItem }) => {
             <div className="flex flex-1 items-center justify-end flex-col sm:flex-row gap-2">
                 <div className="font-bold sm:mr-2 sm:text-lg">${item.price}</div>
                 <div className="space-x-2">
-                    <button className="transition hover:text-red-600">
+                    <button className="transition hover:text-indigo-600">
                         <FaRegHeart className="sm:text-xl" onClick={()=>addToWishlist(item.id)} />
                     </button>
 

@@ -20,7 +20,7 @@ const WishListItem = ({ item, removeItem ,addToCart}) => {
             <div className="flex flex-1 items-center justify-end flex-col sm:flex-row gap-2">
                 <div className="font-bold sm:mr-2 sm:text-xl">${item.price}</div>
                 <div className="space-x-2">
-                    <button className="transition hover:text-red-600">
+                    <button className="transition hover:text-indigo-600">
                         <FaCartPlus className="sm:text-2xl" onClick={()=>addToCart(item.id)} />
                     </button>
 
