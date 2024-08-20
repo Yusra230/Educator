@@ -1,13 +1,23 @@
 import { useDispatch, useSelector } from "react-redux"
 import WishListItem from "./WishListItem"
 import courses from "../data/courses";
+import { WishListActions } from "../store/WiishListSlice";
+import { cartActions } from "../store/CartSlice";
 
 const WishList = () => {
     const wishlist = useSelector(store => store.wishlist);
     const wishlistItems = courses.filter(course => wishlist.includes(course.id));
-    
+    const dispatch = useDispatch();
+
     const removeItem = (id) => {
+        const newWishlist = wishlist.filter(item => item !== id);
+        dispatch(WishListActions.removeFromWishList(newWishlist));
+        console.log(newWishlist)
     };
+
+    const addToCart = (id) => {
+        dispatch(cartActions.addToCart(id));
+    }
 
     return <>
         <section className=" bg-gray-900 text-white">
@@ -19,7 +29,7 @@ const WishList = () => {
 
                     <div className="mt-8">
                         <ul className="space-y-4">
-                            {wishlistItems.map(item => <WishListItem key={item.id} item={item} removeItem={removeItem}></WishListItem>)}
+                            {wishlistItems.map(item => <WishListItem key={item.id} item={item} removeItem={removeItem} addToCart={addToCart}></WishListItem>)}
                         </ul>
 
                     </div>
