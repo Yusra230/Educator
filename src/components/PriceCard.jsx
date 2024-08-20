@@ -3,9 +3,9 @@ import FeatureList from "./FeatureList";
 const PriceCard = ({ item }) => {
     // console.log(item.features);
     return <>
-        <div className="rounded-2xl border border-gray-600 shadow-sm w-96 py-6">
+        <div className="rounded-2xl border border-gray-600 shadow-sm md:w-96 py-6">
             {item.id == 2 && <h2 className="bg-indigo-600">Most Popular</h2>}
-            <div className="p-6 sm:px-8">
+            <div className="p-6 lg:px-8">
                 <h2 className="text-lg font-medium">
                     {item.planName}
                     <span className="sr-only">Plan</span>
